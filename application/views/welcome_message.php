@@ -1,3 +1,6 @@
+<?php
+defined('BASEPATH') OR exit('No direct script access allowed');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,9 +9,8 @@
 
 	<style type="text/css">
 
-	::selection{ background-color: #E13300; color: white; }
-	::moz-selection{ background-color: #E13300; color: white; }
-	::webkit-selection{ background-color: #E13300; color: white; }
+	::selection { background-color: #E13300; color: white; }
+	::-moz-selection { background-color: #E13300; color: white; }
 
 	body {
 		background-color: #fff;
@@ -44,11 +46,11 @@
 		padding: 12px 10px 12px 10px;
 	}
 
-	#body{
+	#body {
 		margin: 0 15px 0 15px;
 	}
-	
-	p.footer{
+
+	p.footer {
 		text-align: right;
 		font-size: 11px;
 		border-top: 1px solid #D0D0D0;
@@ -56,11 +58,11 @@
 		padding: 0 10px 0 10px;
 		margin: 20px 0 0 0;
 	}
-	
-	#container{
+
+	#container {
 		margin: 10px;
 		border: 1px solid #D0D0D0;
-		-webkit-box-shadow: 0 0 8px #D0D0D0;
+		box-shadow: 0 0 8px #D0D0D0;
 	}
 	</style>
 </head>
@@ -71,47 +73,17 @@
 
 	<div id="body">
 		<p>The page you are looking at is being generated dynamically by CodeIgniter.</p>
-		
+
 		<p>If you would like to edit this page you'll find it located at:</p>
 		<code>application/views/welcome_message.php</code>
-		<form>
-			<select id="ListeElement" name="Personnages" onchange="VerifListe();">
-				<?php 
-					foreach ($characters as $key => $value)
-					{
-						echo "<option value=".$value["img"].">".$value["name"]."</option>";
-					}
-				?>
-			</select>
-		</form>
-		<?php 
-			/*foreach($characters as $key=>$value)
-			{
-				echo img($value["img"]);
-			}*/
-			/*$random = rand(1,16);
-			echo img($characters[$random]["img"]);*/
-		?>
-		<img id="imagelol"></img>
-		<p id="test"></p>
+
 		<p>The corresponding controller for this page is found at:</p>
-		<code>application/controllers/welcome.php</code>
+		<code>application/controllers/Welcome.php</code>
 
 		<p>If you are exploring CodeIgniter for the very first time, you should start by reading the <a href="user_guide/">User Guide</a>.</p>
 	</div>
 
-	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds</p>
+	<p class="footer">Page rendered in <strong>{elapsed_time}</strong> seconds. <?php echo  (ENVIRONMENT === 'development') ?  'CodeIgniter Version <strong>' . CI_VERSION . '</strong>' : '' ?></p>
 </div>
-<script type="text/javascript">
-function VerifListe()
-{
-   var ObjListe = document.getElementById('ListeElement');
-   var SelIndex = ObjListe.selectedIndex;
-   var SelValue = ObjListe.options[ObjListe.selectedIndex].value;
-   var SelText = ObjListe.options[ObjListe.selectedIndex].text;
-   document.getElementById("imagelol").src = "http://localhost/nrj/assets/img/" + SelValue;
-   document.getElementById("test").innerHTML = SelValue;
-}
-</script> 
 </body>
 </html>

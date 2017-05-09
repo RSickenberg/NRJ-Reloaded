@@ -19,13 +19,10 @@
 
     ## Database, choose either mysql or postgres, some subsequent roles will be configured
     ## depending on your choice here.
-    # - { role: mysql }
-    # - { role: postgresql }
+     - { role: mysql }
 
     ## Scripting / Language support
-    # - { role: php-fpm }       # PHP using Nginx and PHP-FPM
-    # - { role: php-apache }    # PHP using Apache and mod-php
-    # - { role: django }        # Django framework
+     - { role: php-apache }    # PHP using Apache and mod-php
 
     ## Webserver, choose one of those only if you have not chosen a scripting language
     ## above
@@ -42,7 +39,7 @@
     # - { role: elasticsearch }
 
     ## Install Composer in the box
-    # - { role: composer }
+     - { role: composer }
 
     ## Install OpenLDAP's slapd in the box
     # - { role: openldap }

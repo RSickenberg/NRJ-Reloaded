@@ -1,0 +1,12 @@
+{
+    "name": "root/vagrant",
+    "description": "nrj",
+    "type": "project",
+    "authors": [
+        {
+            "name": "Romain Sickenberg",
+            "email": "romain.sickenberg@liip.ch"
+        }
+    ],
+    "require": {}
+}
